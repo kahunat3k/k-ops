@@ -1,0 +1,49 @@
+{
+    "st" :  {
+        "kind" : "aws-app",
+        "version" : "latest",
+        "attributes" :  {
+            "product_name" : "",
+            "stack" : "",
+            "expected_data" : "",
+            "project_owner" : "",
+            "squad" : "",
+            "tean_lead" : "",
+            "po_pm" : "",
+            "language" : "ruby|java|python|..."   
+        } ,
+        "assessment" : {
+            "app_name" : "app-name.<env>",
+            "squad" : "",
+            "team_members" : [ "List members or groups teams AD"],
+            "environments" : [ "develop", "release", "production"],
+            "epexted_data" : "",
+            "resources" : [
+                {"kind" : "aws-redis" , "attributes" : {
+                    "name" : "<app-name>-aws-redis",
+                    "version" : "latest",
+                    "size" : "shot|medium|large",
+                    "logging" : true 
+                }},
+                {"kind" : "aws-ecs", "attributes" : { 
+                    "name" : "<app-name>-aws-ecs", 
+                    "version" : "latest" ,
+                    "size" : "",
+                    "logging" : true,
+                    "internal_port" : 3000,
+                    "cluster_name" : "",
+                    "env_vars" : [""],
+                    "exposed" : false, 
+                    "depends_on" : [ "aws-redis" , "aws-rds", "aws-sns","aws-s3"]   
+                }},
+                {"kind":"aws-s3", "attributes": {
+                    "name" : "<app-name>-aws-s3",
+                    "version" : "",
+                    "type" : "private|public"
+                }}
+            ],
+            "tags" : [{"key":"value"}]
+        }
+
+    }
+}  

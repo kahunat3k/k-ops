@@ -1,0 +1,36 @@
+---
+type_apps:
+  - single_page
+  - microservice
+  - bff
+  - web_front_static
+  - web_front_dynamic
+single_page:
+  resources:
+    - S3
+microservice:
+  resources:
+    - RDS
+    - REDIS
+    - S3
+    - SQS
+    - SNS
+    - LAMBDA
+    - VPC_END_POINT
+    - APIGW
+bff:
+  resources:
+    - REDIS
+    - SNS
+    - LAMBDA
+    - WAF
+web_front_static:
+  resources:
+    - S3
+    - FARGATE
+web_front_dynamic:
+  resources:
+    - S3
+    - FARGATE
+    - REDIS
+    - SNS

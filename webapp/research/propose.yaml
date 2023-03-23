@@ -1,0 +1,30 @@
+---
+kind: app
+version : 1.0
+attributes:
+  name : dynamic-link-token
+  port : 3000
+  gitrepo : https://github/
+  size : medium
+  expose : internal 
+  provider : aws 
+accounts :
+  - 
+aws:
+  - sms
+  - sqs
+  - rds
+  - redis
+  - sns
+  - apigw
+  - s3
+sms:
+  name : 
+  allow_acces :
+    - app
+    - sqs
+    - rds
+s3:
+  name : smartfit-${app-name}
+  type : private
+  id : ${app-name}/items.js

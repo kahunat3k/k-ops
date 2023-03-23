@@ -1,0 +1,47 @@
+---
+s3:
+  fields:
+    - name : name
+      type : string
+    - name : type
+      type : string
+    - name : id
+      type : string
+    - name : account
+      type : string
+  rules:
+    - field : type
+      choice : 
+        - public
+        - private
+        
+rds:
+  fields :
+    - name : name
+      type : string
+    - name : engine 
+      type : string
+    - name : size
+      type : string
+  rules:
+    - field: engine
+      choice:
+        - mysql
+        - postgres
+    - field: size
+      choice:
+        - short
+        - medium
+        - large
+        
+sqs:
+  fields :
+    - name : name
+      type : string
+    - name : dlq
+      type : bool
+  rules:
+    - field: dlq
+      choice:
+        - true
+        - false

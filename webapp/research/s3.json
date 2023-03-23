@@ -1,0 +1,39 @@
+{
+   "$defs": {
+      "S3": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "account": {
+               "description": "Account if Private",
+               "type": "string"
+            },
+            "id_bucket": {
+               "description": "Id bucket",
+               "type": "string"
+            },
+            "name_bucket": {
+               "description": "Name of bucket",
+               "type": "string"
+            },
+            "type_bucket": {
+               "description": "Private or Public",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "S3",
+         "type": "object"
+      }
+   },
+   "$id": "https://github.com/bioritmo",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "metamodel_version": "1.7.0",
+   "properties": {},
+   "required": [],
+   "title": "ss3info",
+   "type": "object",
+   "version": null
+}
+

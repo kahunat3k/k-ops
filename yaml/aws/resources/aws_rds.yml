@@ -1,0 +1,22 @@
+---
+title: RDS
+type: string
+properties:
+    project:
+      type: string
+      description: Project name of new application that will use this database
+    environments:
+      type: string 
+      description: Environments that database is create
+      enum: ['Staging','Production']
+    engine:
+      type: string
+      descriptioon: Engine database 
+      enum: ['aurora-postgresql','aurora-mysql']
+    engine_version:
+      type: string
+      description: Version of egine
+    engine_mode:
+      type: string
+      description: Engime run mode
+      enum: ['Provisioned']
