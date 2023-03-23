@@ -41,7 +41,7 @@ class GraphView():
             with Cluster(f"{data_json[0]['main']['environments']}"):
                 
                 dns = Route53(
-                label=f"{data_json[0]['main']['product']}-{data_json[0]['main']['environments'].lower()}.smartfit.cloud")
+                label=f"{data_json[0]['main']['product']}-{data_json[0]['main']['environments'].lower()}.kahunat3k.cloud")
 
                 elb = ELB(label=f"elb")
 

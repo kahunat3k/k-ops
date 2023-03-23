@@ -1,0 +1,23 @@
+---
+title: S3
+type : string
+properties :
+  name_bucket:
+    type: string
+    description : Name of bucker
+    minLength: 2
+    maxLength: 15
+  id:
+    type: string
+    description : Id account
+  s3_type:
+    type: string
+    description: Private or public
+    enum: ['Private','Public']
+  region_endpoint: 
+    type: string
+    description: Region end point
+    enum: ['us-east-1','sa-east-1']
+  server_side_encrypt:
+    type: boolean
+    description: Region end point

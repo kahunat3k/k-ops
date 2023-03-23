@@ -41,15 +41,15 @@ def smart_tech_app():
     else:
 
         st.sidebar.title('SREOps')
-        st.sidebar.write('User \n' + st.session_state.user_name) 
+        st.sidebar.write('User \n' + str(st.session_state.user_name)) 
 
         st.title('Infra as Code')
 
-        providers = toolbox.byaml_2_dict(git_hub.getitemcontent('cloudP.yml','kahunat3k/k-ops/yaml'))
+        providers = toolbox.byaml_2_dict(git_hub.getitemcontent('yaml/cloudP.yml','kahunat3k/k-ops'))
 
         cloud_provider = st.sidebar.selectbox('Providers', options=(providers['providers']))
 
-        kind_apps = toolbox.byaml_2_dict(git_hub.getitemcontent(f"{cloud_provider}/kind_apps.yml",'kahunat3k/k-ops/yaml'))
+        kind_apps = toolbox.byaml_2_dict(git_hub.getitemcontent(f"yaml/{cloud_provider}/kind_apps.yml",'kahunat3k/k-ops'))
 
         type_app = st.sidebar.selectbox('Type App',options=(kind_apps['type_apps']))
                 

@@ -18,7 +18,7 @@ class STGithub():
 
         if token == None:
             #TODO personal token Theus
-            self.token = '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'
+            self.token = '<token>'
         else:
             self.token = token
 
@@ -52,9 +52,9 @@ class STGithub():
 
     def getfile(self, prefix:str) -> None:
 
-        content_path = f"aws/resources/aws_{prefix}.yml"
+        content_path = f"/yaml/aws/resources/aws_{prefix}.yml"
 
-        repo = self.git_hub.get_repo('kahunat3k/k-ops/yaml')
+        repo = self.git_hub.get_repo('kahunat3k/k-ops')
 
         self.contents = repo.get_contents(path=content_path)
 

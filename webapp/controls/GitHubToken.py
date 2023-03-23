@@ -45,7 +45,7 @@ def smart_tech_app():
                     return True
 
 
-                if st.button(label='Go a head ' + git_hub.git_hub.get_user().name,on_click=login):
+                if st.button(label='Go a head ' + str(git_hub.git_hub.get_user().name) ,on_click=login):
 
                     return True
     else:

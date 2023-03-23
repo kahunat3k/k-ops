@@ -25,6 +25,6 @@ sms:
     - sqs
     - rds
 s3:
-  name : smartfit-${app-name}
+  name : kahunat3k-${app-name}
   type : private
   id : ${app-name}/items.js

@@ -20,7 +20,7 @@ def smart_tech_app():
 
     providers = toolbox.byaml_2_dict(git_hub.getitemcontent('yaml/cloudP.yml','kahunat3k/k-ops'))
 
-    #st.set_page_config(page_title='Infra as Conde', layout='wide', initial_sidebar_state='auto')
+    #st.set_page_config(page_title='Infra as Code', layout='wide', initial_sidebar_state='auto')
 
     if 'id_session' not in st.session_state:
 
@@ -35,7 +35,7 @@ def smart_tech_app():
 
     st.markdown(hide_menu_style, unsafe_allow_html=True)
     
-    st.sidebar.title('SREOps')
+    st.sidebar.title('K-Ops')
 
     st.title('Request new infrastructure')
 

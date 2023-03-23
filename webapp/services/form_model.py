@@ -27,6 +27,6 @@ def form_dyn(cloud:str,resource:str) -> dict:
             
             #st.json(data_form)
 
-            os.remove(f"./model/{st.session_state.id_session}_{resource}.py")
+            os.remove(f"./webapp/model/{st.session_state.id_session}_{resource}.py")
 
             return {resource : data_form}

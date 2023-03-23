@@ -10,7 +10,7 @@
             "request": "launch",
             "module": "streamlit",
             "justMyCode": true,
-            "args": ["run","./webapp/app.py"]
+            "args": ["run","./webapp/SREOps.py"]
         }
     ]
 }

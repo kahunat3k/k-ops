@@ -22,7 +22,7 @@ class DynModel():
         self.git = STGithub()
         self.prefix_session = id_session
         self.prefix_name = resource_name
-        self.repo_name = 'kahunat3k/k-ops/yaml'
+        self.repo_name = 'kahunat3k/k-ops'
 
     def load_schema(self) -> None:
 
@@ -41,7 +41,7 @@ class DynModel():
                     './tmp/'+ class_model_name+'.yml' ],
                     stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-        class_model = open('./model/'+class_model_name+'.py','+w')
+        class_model = open('./webapp/model/'+class_model_name+'.py','+w')
 
         class_model.write(bytes.decode(res.stdout))
 
