@@ -22,7 +22,7 @@ class DynModel():
         self.git = STGithub()
         self.prefix_session = id_session
         self.prefix_name = resource_name
-        self.repo_name = 'kahunat3k/k-ops'
+        self.repo_name = 'kahunat3k/k-ops/yaml'
 
     def load_schema(self) -> None:
 

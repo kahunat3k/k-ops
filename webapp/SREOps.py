@@ -45,11 +45,11 @@ def smart_tech_app():
 
         st.title('Infra as Code')
 
-        providers = toolbox.byaml_2_dict(git_hub.getitemcontent('cloudP.yml','kahunat3k/k-ops'))
+        providers = toolbox.byaml_2_dict(git_hub.getitemcontent('cloudP.yml','kahunat3k/k-ops/yaml'))
 
         cloud_provider = st.sidebar.selectbox('Providers', options=(providers['providers']))
 
-        kind_apps = toolbox.byaml_2_dict(git_hub.getitemcontent(f"{cloud_provider}/kind_apps.yml",'kahunat3k/k-ops'))
+        kind_apps = toolbox.byaml_2_dict(git_hub.getitemcontent(f"{cloud_provider}/kind_apps.yml",'kahunat3k/k-ops/yaml'))
 
         type_app = st.sidebar.selectbox('Type App',options=(kind_apps['type_apps']))
                 

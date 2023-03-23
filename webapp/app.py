@@ -18,7 +18,7 @@ def smart_tech_app():
     git_hub = STGithub()
     toolbox = ToolBox()
 
-    providers = toolbox.byaml_2_dict(git_hub.getitemcontent('cloudP.yml','yaml/sreops'))
+    providers = toolbox.byaml_2_dict(git_hub.getitemcontent('cloudP.yml','kahunat3k/k-ops/yaml/yaml')
 
     #st.set_page_config(page_title='Infra as Conde', layout='wide', initial_sidebar_state='auto')
 
@@ -41,7 +41,7 @@ def smart_tech_app():
 
     cloud_provider = st.sidebar.selectbox('Providers', options=(providers['providers']))
 
-    kind_apps = toolbox.byaml_2_dict(git_hub.getitemcontent(f"{cloud_provider}/kind_apps.yml",'kahunat3k/k-ops'))
+    kind_apps = toolbox.byaml_2_dict(git_hub.getitemcontent(f"{cloud_provider}/kind_apps.yml",'kahunat3k/k-ops/yaml'))
 
     type_app = st.sidebar.selectbox('Type App',options=(kind_apps['type_apps']))
              

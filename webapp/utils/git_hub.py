@@ -53,7 +53,7 @@ class STGithub():
 
         content_path = f"aws/resources/aws_{prefix}.yml"
 
-        repo = self.git_hub.get_repo('kahunat3k/k-ops')
+        repo = self.git_hub.get_repo('kahunat3k/k-ops/yaml')
 
         self.contents = repo.get_contents(path=content_path)
 

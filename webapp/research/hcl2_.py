@@ -7,7 +7,7 @@ from utils.operations import ToolBox
 git_hub = STGithub()
 toolbox = ToolBox()
 
-git_hub.getitemcontent('tfbase','kahunat3k/k-ops')
+git_hub.getitemcontent('tfbase','kahunat3k/k-ops/yaml')
 
 def main():
 
