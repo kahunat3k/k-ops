@@ -17,7 +17,8 @@ class STGithub():
         #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
 
         if token == None:
-            self.token = '<token>'
+            #TODO personal token Theus
+            self.token = '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'
         else:
             self.token = token
 
