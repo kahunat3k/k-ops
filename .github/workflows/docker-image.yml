@@ -1,0 +1,33 @@
+name: Build and Push Docker Image
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - dev
+      - homolog
+      - main
+      - "feature/*"
+
+jobs:
+  build-and-push:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Definir nome da branch como variável (removendo "/")
+        run: echo "BRANCH_NAME=$(echo ${GITHUB_BASE_REF} | tr '/' '-')" >> $GITHUB_ENV
+
+      - name: Login no GitHub Container Registry (GHCR)
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Construir imagem Docker
+        run: |
+          docker build -t ghcr.io/${{ github.repository }}:${{ env.BRANCH_NAME }} .
+
+      - name: Enviar imagem para o GitHub Container Registry
+        run: |
+          docker push ghcr.io/${{ github.repository }}:${{ env.BRANCH_NAME }}
