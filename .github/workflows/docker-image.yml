@@ -28,8 +28,8 @@ jobs:
 
       - name: Construir imagem Docker
         run: |
-          docker build -t meu-usuario/minha-imagem:${{ env.BRANCH_NAME }} .
+          docker build -t zMatths/minha-imagem:${{ env.BRANCH_NAME }} .
 
       - name: Enviar imagem para o Docker Registry
         run: |
-          docker push meu-usuario/minha-imagem:${{ env.BRANCH_NAME }}
+          docker push zMatths/minha-imagem:${{ env.BRANCH_NAME }}
