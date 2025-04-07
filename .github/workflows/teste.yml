@@ -1,4 +1,4 @@
-name: Build and Push Docker Image (Test)
+name: workflow dispatch
 
 on:
   workflow_dispatch: # Permite executar manualmente o workflow no GitHub Actions
