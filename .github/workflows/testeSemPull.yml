@@ -1,18 +1,10 @@
-name: Build and Push Docker Image
+name: Build and Push Docker Image (Test)
 
 on:
-  pull_request:
-    types:
-      - closed
-    branches:
-      - dev
-      - homolog
-      - main
-      - "feature/*"
+  workflow_dispatch: # Permite executar manualmente o workflow no GitHub Actions
 
 jobs:
   setting-environment:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     outputs:
       branch-name: ${{ steps.set-branch.outputs.branch }}
@@ -23,7 +15,7 @@ jobs:
       - name: Definir nome da branch de origem como variável (sem "/")
         id: set-branch
         run: |
-          BRANCH_NAME=$(echo '${{ github.event.pull_request.head.ref }}' | tr '/' '-')
+          BRANCH_NAME=$(echo '${{ github.ref_name }}' | tr '/' '-')
           echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
 
   build:
@@ -71,7 +63,6 @@ jobs:
 
   push:
     needs: [build, image-analyzer]
-    if: success()
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do código
