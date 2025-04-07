@@ -1,4 +1,4 @@
-name: Build and Push Docker Imag10
+name: Build and Push Docker Image
 
 on:
   pull_request:
